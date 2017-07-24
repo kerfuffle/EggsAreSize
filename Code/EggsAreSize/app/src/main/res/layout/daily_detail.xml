@@ -1,13 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Today"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:text="TextView" />
+        android:text="Today"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/callim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="78dp"
+        android:text="Calorie Limit:"
+        android:layout_below="@+id/Today"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/calorie_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/callim"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_toEndOf="@+id/callim"
+        android:layout_toRightOf="@+id/callim"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/netcal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="Net Calories: "
+        android:layout_below="@+id/callim"
+        android:layout_alignLeft="@+id/callim"
+        android:layout_alignStart="@+id/callim" />
+
+    <TextView
+        android:id="@+id/net_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/netcal"
+        android:layout_toEndOf="@+id/netcal"
+        android:text="0"
+        android:layout_alignLeft="@+id/calorie_limit"
+        android:layout_alignStart="@+id/calorie_limit" />
+
+    <TextView
+        android:id="@+id/tweight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight:"
+        android:layout_alignBaseline="@+id/calorie_limit"
+        android:layout_alignBottom="@+id/calorie_limit"
+        android:layout_alignRight="@+id/caleaten"
+        android:layout_alignEnd="@+id/caleaten" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_alignBaseline="@+id/tweight"
+        android:layout_alignBottom="@+id/tweight"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp" />
+
+    <TextView
+        android:id="@+id/tcarbs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Carbs:"
+        android:layout_below="@+id/netcal"
+        android:layout_alignLeft="@+id/netcal"
+        android:layout_alignStart="@+id/netcal" />
+
+    <TextView
+        android:id="@+id/carbs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tcarbs"
+        android:layout_alignLeft="@+id/net_calories"
+        android:layout_alignStart="@+id/net_calories"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/tproteins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tcarbs"
+        android:layout_alignStart="@+id/tcarbs"
+        android:layout_below="@+id/tcarbs"
+        android:layout_marginTop="12dp"
+        android:text="Proteins:" />
+
+    <TextView
+        android:id="@+id/proteins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tproteins"
+        android:layout_alignLeft="@+id/carbs"
+        android:layout_alignStart="@+id/carbs"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/tfats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="Fats:"
+        android:layout_below="@+id/tproteins"
+        android:layout_alignLeft="@+id/tproteins"
+        android:layout_alignStart="@+id/tproteins" />
+
+    <TextView
+        android:id="@+id/fats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tfats"
+        android:layout_alignLeft="@+id/proteins"
+        android:layout_alignStart="@+id/proteins"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/caleaten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories Eaten:"
+        android:layout_alignBaseline="@+id/net_calories"
+        android:layout_alignBottom="@+id/net_calories"
+        android:layout_toLeftOf="@+id/calories_eaten"
+        android:layout_toStartOf="@+id/calories_eaten"
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp" />
+
+    <TextView
+        android:id="@+id/calories_eaten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/caleaten"
+        android:layout_alignLeft="@+id/weight"
+        android:layout_alignStart="@+id/weight"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/calburned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calories Burned:"
+        android:layout_above="@+id/carbs"
+        android:layout_alignRight="@+id/caleaten"
+        android:layout_alignEnd="@+id/caleaten" />
+
+    <TextView
+        android:id="@+id/calories_burned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/calburned"
+        android:layout_alignLeft="@+id/calories_eaten"
+        android:layout_alignStart="@+id/calories_eaten"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/tgoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/callim"
+        android:layout_alignStart="@+id/callim"
+        android:layout_below="@+id/Today"
+        android:text="Goal:" />
+
+    <TextView
+        android:id="@+id/goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tgoal"
+        android:layout_toEndOf="@+id/tcarbs"
+        android:layout_toRightOf="@+id/tcarbs"
+        android:text="Baloon" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/calories_burned"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/calories_burned"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
 </RelativeLayout>
